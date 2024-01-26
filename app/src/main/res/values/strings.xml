@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="action_submit">Submit</string>
+    <string name="action_delete">Delete</string>
+</resources>

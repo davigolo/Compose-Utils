@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "154530612198",
+    "project_id": "horoscopeapp-b6c16",
+    "storage_bucket": "horoscopeapp-b6c16.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:154530612198:android:e86afbe2ec43f59260cc27",
+        "android_client_info": {
+          "package_name": "com.example.HoroscopeApp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJScp2iA77MMszevdhh9zClMUXxoT6s6o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
