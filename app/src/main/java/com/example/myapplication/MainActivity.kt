@@ -4,14 +4,12 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -27,7 +25,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.myapplication.ui.screens.Screen
 import com.example.myapplication.ui.screens.home.Home
-import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,7 +40,7 @@ class MainActivity : ComponentActivity() {
 //region Button example
 //@Preview(widthDp = 400, heightDp = 400, showBackground = true)
 @Composable
-fun ComposablesTest() {
+fun ComposableTest() {
     ButtonPreview(buttonText = "Haz Click")
 }
 
@@ -57,12 +54,12 @@ fun ButtonPreview(buttonText: String) {
 
 //endregion
 //region Box example
-//@Preview(widthDp = 400, heightDp = 200, showBackground = true)
+@Preview(widthDp = 400, heightDp = 200, showBackground = true)
 @Composable
 fun BoxPreview() {
     Surface {
         Box {
-            Button(onClick = { /*TODO*/ }, Modifier.align(Alignment.BottomEnd)) {
+            Button(onClick = { /*TODO*/ }, Modifier.align(Alignment.Center)) {
                 Text(text = "Soy un boton")
             }
             Text(text = "Hola buenas tardes", Modifier.align(Alignment.BottomStart))
@@ -93,13 +90,14 @@ fun TButton(text: String, modifier: Modifier = Modifier) {
         Text(text = text)
     }
 }
+
 //Igual para Row
 //endregion
 //region Login form
 @OptIn(ExperimentalMaterial3Api::class)
 @Preview(widthDp = 200, heightDp = 200, showBackground = true)
 @Composable
-fun LoginForm(){
+fun LoginForm() {
     Surface {
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
             TextField(value = "User", onValueChange = {})
@@ -110,9 +108,10 @@ fun LoginForm(){
         }
     }
 }
+
 //endregion
 //region Modifiers order
-//@Preview(widthDp = 200, heightDp = 200, showBackground = true)
+@Preview(widthDp = 200, heightDp = 200, showBackground = true)
 @Composable
 fun TextButton() {
     Screen {

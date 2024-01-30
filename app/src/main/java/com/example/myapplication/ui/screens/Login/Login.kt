@@ -28,13 +28,17 @@ import com.example.myapplication.ui.formutils.PassTextField
 import com.example.myapplication.ui.formutils.UserTextField
 import com.example.myapplication.ui.screens.Screen
 
-@Preview(showBackground = true)
-
 
 @Composable
 fun Login(loginViewModel: LoginViewModel = viewModel()) {
+    Login(state = loginViewModel.state, onLoginClick = loginViewModel::loginClick)
+}
 
-    val state = loginViewModel.state
+
+
+@Composable
+fun Login(state: LoginViewModel.UiState, onLoginClick: (String, String) -> Unit) {
+
     val message = when {
         state.userLoggedIn -> "Success"
         state.error != null -> state.error
@@ -48,7 +52,7 @@ fun Login(loginViewModel: LoginViewModel = viewModel()) {
             .padding(16.dp)
             .width(IntrinsicSize.Min),
         message = message,
-        onSubmit = { user, pass -> loginViewModel.loginClick(user, pass) }
+        onSubmit = onLoginClick
     )
 }
 

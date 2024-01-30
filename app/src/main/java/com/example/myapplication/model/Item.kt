@@ -7,7 +7,7 @@ data class Item(
     val id: Int
 )
 
-var itemList = (1..1000).map {
+var itemList = (1..10000).map {
     Item(
         title = "Item $it",
         description = "Description $it",

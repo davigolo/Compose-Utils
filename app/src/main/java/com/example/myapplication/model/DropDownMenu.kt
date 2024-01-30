@@ -1,5 +1,6 @@
 package com.example.myapplication.model
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.material3.DropdownMenu
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.Text
@@ -17,20 +18,27 @@ import com.example.myapplication.ui.screens.home.DropDownMenuActions
 @Composable
 fun DropDownMenuItems(onActionClick: (DropDownMenuActions) -> Unit) {
     var isDropDownMenuExpanded by remember { mutableStateOf(false) }
-    TextButton(onClick = { isDropDownMenuExpanded = true }) {
-        Text(text = "Share")
-    }
-    DropdownMenu(
-        expanded = isDropDownMenuExpanded,
-        onDismissRequest = { isDropDownMenuExpanded = false }) {
-        DropDownMenuActions.values().forEach { action ->
-            DropdownMenuItem(
-                text = { Text(text = stringResource(id = action.actionName),
-                    color = if (action.destructive) Color.Red else Color.Unspecified) },
-                onClick = {
-                    isDropDownMenuExpanded = false
-                    onActionClick(action)
-                })
+    Box {
+        TextButton(onClick = { isDropDownMenuExpanded = true }) {
+            Text(text = "Share")
+        }
+        DropdownMenu(
+            expanded = isDropDownMenuExpanded,
+            onDismissRequest = { isDropDownMenuExpanded = false }) {
+            DropDownMenuActions.values().forEach { action ->
+                DropdownMenuItem(
+                    text = {
+                        Text(
+                            text = stringResource(id = action.actionName),
+                            color = if (action.destructive) Color.Red else Color.Unspecified
+                        )
+                    },
+
+                    onClick = {
+                        isDropDownMenuExpanded = false
+                        onActionClick(action)
+                    })
+            }
         }
     }
 }
